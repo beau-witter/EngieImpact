@@ -8,5 +8,5 @@ Starting from scratch I had to do the following:
 3. Create new public repository in GitHub (the one we are in)
 4. Download Terraform executable and add to my Path
 5. Download and install Docker Desktop on Windows
-  a. Turn on Containers and Hyper V for windows
+   1.  Turn on Containers and Hyper V for windows
 6. 
