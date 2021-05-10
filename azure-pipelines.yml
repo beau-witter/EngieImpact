@@ -18,6 +18,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
+    commandOptions: '-reconfigure'
     backendServiceArm: 'Personal - myTFResourceGroup'
     backendAzureRmResourceGroupName: 'myTFResourceGroup'
     backendAzureRmStorageAccountName: 'mytstorageaccount'
