@@ -6,7 +6,7 @@ locals {
 
 terraform {
   backend "azurerm" {
-    subscription_id = "b58e387e-6bb2-4bc5-8ff9-41f1480aef27"
+    sas_token = "sp=racwdl&st=2021-05-10T06:11:42Z&se=2021-05-10T14:11:42Z&spr=https&sv=2020-02-10&sr=c&sig=cRkBFrRUaP3bgUx2EsImP30Hy1K9rdrSD4f1KS6o2GE%3D"
     resource_group_name = "myTFResourceGroup"
     storage_account_name = "mytstorageaccount"
     container_name = "terraform"
