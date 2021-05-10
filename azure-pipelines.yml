@@ -10,10 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    commandOptions: '-out=tfplan'
+    environmentServiceNameAzureRM: 'Personal - myTFResourceGroup'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    commandOptions: 'tfplan -auto-approve'
+    environmentServiceNameAzureRM: 'Personal - myTFResourceGroup'
