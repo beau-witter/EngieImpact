@@ -35,5 +35,5 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'apply'
-    commandOptions: 'tfplan -auto-approve'
+    commandOptions: '-auto-approve tfplan'
     environmentServiceNameAzureRM: 'Personal - myTFResourceGroup'
