@@ -11,6 +11,8 @@ pool:
 
 variables:
   - group: Terraform
+  - name: buildId
+    value: $(Build.BuildId)
 
 steps:
 - task: Docker@2
@@ -25,7 +27,7 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: |
-      $(Build.BuildId)
+      $(buildId)
       latest
     arguments: '--no-cache'
 
@@ -35,7 +37,7 @@ steps:
     repository: 'moon'
     command: 'push'
     tags: |
-      $(Build.BuildId)
+      $(buildId)
       latest
       
 - task: TerraformInstaller@0
@@ -57,12 +59,12 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    commandOptions: '-out=tfplan -var="imagetag=${Build.BuildId)"'
+    commandOptions: '-out=tfplan -var="imagetag=$(buildId)"'
     environmentServiceNameAzureRM: 'Personal - myTFResourceGroup'
 
 - task: TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
     command: 'apply'
-    commandOptions: '-auto-approve tfplan -var="imagetag=${Build.BuildId)"'
+    commandOptions: '-auto-approve -var="imagetag=$(buildId)" tfplan'
     environmentServiceNameAzureRM: 'Personal - myTFResourceGroup'
