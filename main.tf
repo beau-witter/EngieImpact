@@ -1,13 +1,11 @@
 # Configure the Azure provider
 terraform {
-  backend "azurerm" {
-    sas_token = "sp=racwdl&st=2021-05-10T06:11:42Z&se=2021-05-10T14:11:42Z&spr=https&sv=2020-02-10&sr=c&sig=cRkBFrRUaP3bgUx2EsImP30Hy1K9rdrSD4f1KS6o2GE%3D"
-  }
+  backend "azurerm" { }
 
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = ">= 2.48.0"
+      version = ">= 2.26"
     }
   }
 
@@ -60,7 +58,5 @@ resource "azurerm_app_service" "app" {
   app_settings = {
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = false
     "DOCKER_REGISTRY_SERVER_URL" = "https://bwitterengieimpact.azurecr.io"
-    "DOCKER_REGISTRY_SERVER_USERNAME" = var.docker_registry_server_username
-    "DOCKER_REGISTRY_SERVER_PASSWORD" = var.docker_registry_server_password
   }
 }
