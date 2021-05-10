@@ -19,6 +19,7 @@ steps:
     provider: 'azurerm'
     command: 'init'
     backendServiceArm: 'Personal - myTFResourceGroup'
+    backendAzureRmStorageAccountName: 'mytstorageaccount'
     
 - task: TerraformTaskV1@0
   inputs:
