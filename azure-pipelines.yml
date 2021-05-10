@@ -20,6 +20,7 @@ steps:
     command: 'init'
     backendServiceArm: 'Personal - myTFResourceGroup'
     backendAzureRmStorageAccountName: 'mytstorageaccount'
+    backendAzureRmContainerName: 'terraform'
     
 - task: TerraformTaskV1@0
   inputs:
