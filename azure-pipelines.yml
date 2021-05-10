@@ -26,9 +26,7 @@ steps:
     repository: 'moon'
     command: 'build'
     Dockerfile: '**/Dockerfile'
-    tags: |
-      $(buildId)
-      latest
+    tags: $(buildId)
     arguments: '--no-cache'
 
 - task: Docker@2
@@ -36,9 +34,7 @@ steps:
     containerRegistry: 'Docker Container'
     repository: 'moon'
     command: 'push'
-    tags: |
-      $(buildId)
-      latest
+    tags: $(buildId)
       
 - task: TerraformInstaller@0
   inputs:
