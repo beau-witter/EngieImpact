@@ -1,16 +1,12 @@
 # Configure the Azure provider
-locals {
-  subscription_id = "b58e387e-6bb2-4bc5-8ff9-41f1480aef27"
-  resource_group_name = "myTFResourceGroup"
-}
-
 terraform {
   backend "azurerm" {
-    sas_token = "sp=racwdl&st=2021-05-10T06:11:42Z&se=2021-05-10T14:11:42Z&spr=https&sv=2020-02-10&sr=c&sig=cRkBFrRUaP3bgUx2EsImP30Hy1K9rdrSD4f1KS6o2GE%3D"
-    resource_group_name = "myTFResourceGroup"
     storage_account_name = "mytstorageaccount"
     container_name = "terraform"
     key = "terraform.tfstate"
+
+    
+    sas_token = "sp=racwdl&st=2021-05-10T06:11:42Z&se=2021-05-10T14:11:42Z&spr=https&sv=2020-02-10&sr=c&sig=cRkBFrRUaP3bgUx2EsImP30Hy1K9rdrSD4f1KS6o2GE%3D"
   }
 
   required_providers {
@@ -25,26 +21,26 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = local.subscription_id
+  subscription_id = "b58e387e-6bb2-4bc5-8ff9-41f1480aef27"
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = local.resource_group_name
+  name     = "myTFResourceGroup"
   location = "westus2"
   }
 
 resource "azurerm_container_registry" "acr" {
   name = "bwitterengieimpact"
-  resource_group_name = local.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   location = azurerm_resource_group.rg.location
   sku = "Standard"
   admin_enabled = true
 }
 
 resource "azurerm_app_service_plan" "asp" {
-  name = "${local.resource_group_name}-plan"
+  name = "${azurerm_resource_group.rg.name}-plan"
   location = azurerm_resource_group.rg.location
-  resource_group_name = local.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
 
   kind = "Linux"
 
@@ -57,9 +53,9 @@ resource "azurerm_app_service_plan" "asp" {
 }
 
 resource "azurerm_app_service" "app" {
-  name = "${local.resource_group_name}-app"
+  name = "${azurerm_resource_group.rg.name}-app"
   location = azurerm_resource_group.rg.location
-  resource_group_name = local.resource_group_name
+  resource_group_name = azurerm_resource_group.rg.name
   app_service_plan_id = azurerm_app_service_plan.asp.id
 
   site_config {
