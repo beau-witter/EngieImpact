@@ -21,6 +21,7 @@ steps:
     backendServiceArm: 'Personal - myTFResourceGroup'
     backendAzureRmStorageAccountName: 'mytstorageaccount'
     backendAzureRmContainerName: 'terraform'
+    backendAzureRmKey: 'terraform.tfstate'
     
 - task: TerraformTaskV1@0
   inputs:
