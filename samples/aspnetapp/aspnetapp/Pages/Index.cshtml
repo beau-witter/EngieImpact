@@ -47,4 +47,221 @@
             <td>@process.MaxWorkingSet</td>
         </tr>    
     </table>
+</div><div>
+    <h5 class="text-center">Metrics</h5>
+    <table width="500" align="center" class="table-striped table-hover">
+        <tr>
+            <td>For Wayne, as promised (some moons)</td>
+            <td>🌕🌖🌗🌘🌑🌒🌓🌔🌕</td>
+        </tr>
+        <tr>
+            <td>Containerized</td>
+            <td>@(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") is object ? "true" : "false")</td>
+        </tr>
+        <tr>
+            <td>CPU cores</td>
+            <td>@Environment.ProcessorCount</td>
+        </tr>
+    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    {
+        <tr>
+            <td>cgroup memory usage</td>
+            <td>@System.IO.File.ReadAllLines("/sys/fs/cgroup/memory/memory.usage_in_bytes")[0]</td>
+        </tr>
+    }
+        <tr>
+            <td>Memory, current usage (bytes)</td>
+            <td>@process.WorkingSet64</td>
+        </tr>
+        <tr>
+            <td>Memory, max available (bytes)</td>
+            <td>@process.MaxWorkingSet</td>
+        </tr>    
+    </table>
+</div><div>
+    <h5 class="text-center">Metrics</h5>
+    <table width="500" align="center" class="table-striped table-hover">
+        <tr>
+            <td>For Wayne, as promised (some moons)</td>
+            <td>🌕🌖🌗🌘🌑🌒🌓🌔🌕</td>
+        </tr>
+        <tr>
+            <td>Containerized</td>
+            <td>@(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") is object ? "true" : "false")</td>
+        </tr>
+        <tr>
+            <td>CPU cores</td>
+            <td>@Environment.ProcessorCount</td>
+        </tr>
+    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    {
+        <tr>
+            <td>cgroup memory usage</td>
+            <td>@System.IO.File.ReadAllLines("/sys/fs/cgroup/memory/memory.usage_in_bytes")[0]</td>
+        </tr>
+    }
+        <tr>
+            <td>Memory, current usage (bytes)</td>
+            <td>@process.WorkingSet64</td>
+        </tr>
+        <tr>
+            <td>Memory, max available (bytes)</td>
+            <td>@process.MaxWorkingSet</td>
+        </tr>    
+    </table>
+</div><div>
+    <h5 class="text-center">Metrics</h5>
+    <table width="500" align="center" class="table-striped table-hover">
+        <tr>
+            <td>For Wayne, as promised (some moons)</td>
+            <td>🌕🌖🌗🌘🌑🌒🌓🌔🌕</td>
+        </tr>
+        <tr>
+            <td>Containerized</td>
+            <td>@(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") is object ? "true" : "false")</td>
+        </tr>
+        <tr>
+            <td>CPU cores</td>
+            <td>@Environment.ProcessorCount</td>
+        </tr>
+    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    {
+        <tr>
+            <td>cgroup memory usage</td>
+            <td>@System.IO.File.ReadAllLines("/sys/fs/cgroup/memory/memory.usage_in_bytes")[0]</td>
+        </tr>
+    }
+        <tr>
+            <td>Memory, current usage (bytes)</td>
+            <td>@process.WorkingSet64</td>
+        </tr>
+        <tr>
+            <td>Memory, max available (bytes)</td>
+            <td>@process.MaxWorkingSet</td>
+        </tr>    
+    </table>
+</div><div>
+    <h5 class="text-center">Metrics</h5>
+    <table width="500" align="center" class="table-striped table-hover">
+        <tr>
+            <td>For Wayne, as promised (some moons)</td>
+            <td>🌕🌖🌗🌘🌑🌒🌓🌔🌕</td>
+        </tr>
+        <tr>
+            <td>Containerized</td>
+            <td>@(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") is object ? "true" : "false")</td>
+        </tr>
+        <tr>
+            <td>CPU cores</td>
+            <td>@Environment.ProcessorCount</td>
+        </tr>
+    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    {
+        <tr>
+            <td>cgroup memory usage</td>
+            <td>@System.IO.File.ReadAllLines("/sys/fs/cgroup/memory/memory.usage_in_bytes")[0]</td>
+        </tr>
+    }
+        <tr>
+            <td>Memory, current usage (bytes)</td>
+            <td>@process.WorkingSet64</td>
+        </tr>
+        <tr>
+            <td>Memory, max available (bytes)</td>
+            <td>@process.MaxWorkingSet</td>
+        </tr>    
+    </table>
+</div><div>
+    <h5 class="text-center">Metrics</h5>
+    <table width="500" align="center" class="table-striped table-hover">
+        <tr>
+            <td>For Wayne, as promised (some moons)</td>
+            <td>🌕🌖🌗🌘🌑🌒🌓🌔🌕</td>
+        </tr>
+        <tr>
+            <td>Containerized</td>
+            <td>@(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") is object ? "true" : "false")</td>
+        </tr>
+        <tr>
+            <td>CPU cores</td>
+            <td>@Environment.ProcessorCount</td>
+        </tr>
+    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    {
+        <tr>
+            <td>cgroup memory usage</td>
+            <td>@System.IO.File.ReadAllLines("/sys/fs/cgroup/memory/memory.usage_in_bytes")[0]</td>
+        </tr>
+    }
+        <tr>
+            <td>Memory, current usage (bytes)</td>
+            <td>@process.WorkingSet64</td>
+        </tr>
+        <tr>
+            <td>Memory, max available (bytes)</td>
+            <td>@process.MaxWorkingSet</td>
+        </tr>    
+    </table>
+</div><div>
+    <h5 class="text-center">Metrics</h5>
+    <table width="500" align="center" class="table-striped table-hover">
+        <tr>
+            <td>For Wayne, as promised (some moons)</td>
+            <td>🌕🌖🌗🌘🌑🌒🌓🌔🌕</td>
+        </tr>
+        <tr>
+            <td>Containerized</td>
+            <td>@(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") is object ? "true" : "false")</td>
+        </tr>
+        <tr>
+            <td>CPU cores</td>
+            <td>@Environment.ProcessorCount</td>
+        </tr>
+    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    {
+        <tr>
+            <td>cgroup memory usage</td>
+            <td>@System.IO.File.ReadAllLines("/sys/fs/cgroup/memory/memory.usage_in_bytes")[0]</td>
+        </tr>
+    }
+        <tr>
+            <td>Memory, current usage (bytes)</td>
+            <td>@process.WorkingSet64</td>
+        </tr>
+        <tr>
+            <td>Memory, max available (bytes)</td>
+            <td>@process.MaxWorkingSet</td>
+        </tr>    
+    </table>
+</div><div>
+    <h5 class="text-center">Metrics</h5>
+    <table width="500" align="center" class="table-striped table-hover">
+        <tr>
+            <td>For Wayne, as promised (some moons)</td>
+            <td>🌕🌖🌗🌘🌑🌒🌓🌔🌕</td>
+        </tr>
+        <tr>
+            <td>Containerized</td>
+            <td>@(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") is object ? "true" : "false")</td>
+        </tr>
+        <tr>
+            <td>CPU cores</td>
+            <td>@Environment.ProcessorCount</td>
+        </tr>
+    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    {
+        <tr>
+            <td>cgroup memory usage</td>
+            <td>@System.IO.File.ReadAllLines("/sys/fs/cgroup/memory/memory.usage_in_bytes")[0]</td>
+        </tr>
+    }
+        <tr>
+            <td>Memory, current usage (bytes)</td>
+            <td>@process.WorkingSet64</td>
+        </tr>
+        <tr>
+            <td>Memory, max available (bytes)</td>
+            <td>@process.MaxWorkingSet</td>
+        </tr>    
+    </table>
 </div>
