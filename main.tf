@@ -50,6 +50,11 @@ data "azurerm_container_registry" "registry" {
   resource_group_name = azurerm_resource_group.rg.name
 }
 
+variable "imagetag" {
+  type = string
+  description = "The tag number to provision"
+}
+
 resource "azurerm_app_service" "app" {
   name = "${azurerm_resource_group.rg.name}-app"
   location = azurerm_resource_group.rg.location
@@ -57,7 +62,7 @@ resource "azurerm_app_service" "app" {
   app_service_plan_id = azurerm_app_service_plan.asp.id
 
   site_config {
-    linux_fx_version = "DOCKER|bwitterengieimpact.azurecr.io/moon:latest"
+    linux_fx_version = "DOCKER|bwitterengieimpact.azurecr.io/moon:${var.imagetag}"
   }
 
   app_settings = {
