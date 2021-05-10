@@ -18,6 +18,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
+    backendServiceArm: 'Personal - myTFResourceGroup'
     
 - task: TerraformTaskV1@0
   inputs:
