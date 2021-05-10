@@ -1,18 +1,13 @@
 # Configure the Azure provider
 terraform {
   backend "azurerm" {
-    storage_account_name = "mytstorageaccount"
-    container_name = "terraform"
-    key = "terraform.tfstate"
-
-    
     sas_token = "sp=racwdl&st=2021-05-10T06:11:42Z&se=2021-05-10T14:11:42Z&spr=https&sv=2020-02-10&sr=c&sig=cRkBFrRUaP3bgUx2EsImP30Hy1K9rdrSD4f1KS6o2GE%3D"
   }
 
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = ">= 2.26"
+      version = ">= 2.48.0"
     }
   }
 
