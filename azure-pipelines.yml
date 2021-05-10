@@ -9,6 +9,9 @@ trigger:
 pool:
   name: Local
 
+variables:
+  - group: Terraform
+
 steps:
 - task: TerraformInstaller@0
   inputs:

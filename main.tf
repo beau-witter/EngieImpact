@@ -60,7 +60,7 @@ resource "azurerm_app_service" "app" {
   app_settings = {
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = false
     "DOCKER_REGISTRY_SERVER_URL" = "https://bwitterengieimpact.azurecr.io"
-    "DOCKER_REGISTRY_SERVER_USERNAME" = "bwitterEngieImpact"
-    "DOCKER_REGISTRY_SERVER_PASSWORD" = "a/eC5QECHaOXBJ/4xYbUDMd8Xqk8+zgv"
+    "DOCKER_REGISTRY_SERVER_USERNAME" = var.docker_registry_server_username
+    "DOCKER_REGISTRY_SERVER_PASSWORD" = var.docker_registry_server_password
   }
 }

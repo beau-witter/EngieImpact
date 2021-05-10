@@ -1,3 +1,6 @@
 ﻿*.exe
 *.tfstate
 *.backup
+samples/aspnetapp/.vs
+samples/aspnetapp/aspnetapp/bin
+samples/aspnetapp/aspnetapp/obj
