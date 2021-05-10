@@ -22,12 +22,22 @@ steps:
   inputs:
     containerRegistry: 'Docker Container'
     repository: 'moon'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: |
       $(Build.BuildId)
       latest
-    
+    arguments: '--no-cache'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker Container'
+    repository: 'moon'
+    command: 'push'
+    tags: |
+      $(Build.BuildId)
+      latest
+      
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.14.11'
