@@ -12,7 +12,7 @@ pool:
 steps:
 - task: TerraformInstaller@0
   inputs:
-    terraformVersion: '0.15.3'
+    terraformVersion: '0.14.11'
     
 - task: TerraformTaskV1@0
   inputs:
