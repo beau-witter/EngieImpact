@@ -24,7 +24,9 @@ steps:
     repository: 'moon'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 'latest'
+    tags: |
+      $(Build.BuildId)
+      latest
     
 - task: TerraformInstaller@0
   inputs:
