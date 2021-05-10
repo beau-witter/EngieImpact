@@ -57,6 +57,6 @@ resource "azurerm_app_service" "app" {
 
   app_settings = {
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = false
-    "DOCKER_REGISTRY_SERVER_URL" = "https://bwitterengieimpact.azurecr.io"
+    "DOCKER_REGISTRY_SERVER_URL" = "bwitterengieimpact.azurecr.io"
   }
 }
