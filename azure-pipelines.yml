@@ -10,6 +10,20 @@ pool:
   name: Local
 
 steps:
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: '0.15.3'
+    
+- task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Personal - myTFResourceGroup'
+    backendAzureRmResourceGroupName: 'myTFResourceGroup'
+    backendAzureRmStorageAccountName: 'mytstorageaccount'
+    backendAzureRmContainerName: 'terraform'
+    backendAzureRmKey: 'terraform.tfstate'
+    
 - task: TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
@@ -21,5 +35,5 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'apply'
-    commandOptions: 'tfplan -auto-approve'
+    commandOptions: '-auto-approve tfplan'
     environmentServiceNameAzureRM: 'Personal - myTFResourceGroup'
